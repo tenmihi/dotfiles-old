@@ -1,0 +1,18 @@
+#
+# aliases
+#
+
+# colored ls
+alias ls='ls --color=auto'
+
+# git add
+alias gaa='git add -A'
+
+# git commit
+alias gc='git commit'
+
+# safe rm
+alias rm='rm -i'
+
+# carton exec
+alias carton-exec='carton exec -- plackup -Ilib -R ./lib --access-log /dev/null -p5000 -a'

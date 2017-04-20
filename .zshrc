@@ -124,12 +124,6 @@ bindkey '^[[Z' reverse-menu-complete
 # others
 #
 
-# vi コマンドでVimを実行する
-alias vi='vim'
-
-# carton-exec
-alias carton-exec="carton exec -- plackup -Ilib -R ./lib --access-log /dev/null -p 5000 -a"
-
 # plenv
 export PLENV_ROOT=$HOME/.plenv
 export PATH=$PLENV_ROOT/bin:$PATH
@@ -200,3 +194,15 @@ function tmux_automatically_attach_session()
     fi
 }
 tmux_automatically_attach_session
+
+#
+# load aliases
+#
+
+load_if_exists() {
+  if [ -f $1 ]; then
+    source $1
+  fi
+}
+
+load_if_exists "$HOME/.my_aliases"
