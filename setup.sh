@@ -2,7 +2,7 @@
 
 # http://qiita.com/massy22/items/5bdb97f8d6e93517f916
 
-DOT_FILES=(.bashrc .bash_profile …)
+DOT_FILES=(.vimrc, tmux.conf, .zshrc)
 
 for file in ${DOT_FILES[@]}
 do
