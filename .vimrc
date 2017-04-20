@@ -12,7 +12,7 @@ set showcmd
 set number 
 
 " show cursorline
-set cursorline
+" set cursorline
 
 " show current line and corumn number
 set ruler
