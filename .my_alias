@@ -3,7 +3,13 @@
 #
 
 # colored ls
-alias ls='ls --color=auto'
+if [ "$(uname)" = 'Darwin' ]; then
+    export LSCOLORS=xbfxcxdxbxegedabagacad
+    alias ls='ls -G'
+else
+    eval `dircolors ~/.colorrc`
+    alias ls='ls --color=auto'
+fi
 
 # git add
 alias gaa='git add -A'
@@ -12,7 +18,9 @@ alias gaa='git add -A'
 alias gc='git commit'
 
 # safe rm
-alias rm='rm -i'
+if builtin command -v rmtrash > /dev/null ; then
+  alias rm='rmtrash'
+fi
 
 # carton exec
 alias carton-exec='carton exec -- plackup -Ilib -R ./lib --access-log /dev/null -p5000 -a'
