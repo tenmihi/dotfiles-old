@@ -2,6 +2,9 @@
 " generics
 "
 
+" esc timeout 
+set timeout timeoutlen=50
+
 " enable syntax highlight
 syntax on
 
