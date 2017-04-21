@@ -1,10 +1,8 @@
-#!/bin/bash
+#!/bin/zsh
 
-# http://qiita.com/massy22/items/5bdb97f8d6e93517f916
+dot_files=(".vimrc" ".tmux.conf" ".zshrc" ".my_alias")
 
-DOT_FILES=(.vimrc, .tmux.conf, .zshrc, .my_alias)
-
-for file in ${DOT_FILES[@]}
+for file in $dot_files;
 do
     ln -s $HOME/dotfiles/$file $HOME/$file
 done
