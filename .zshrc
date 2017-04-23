@@ -205,4 +205,4 @@ load_if_exists() {
   fi
 }
 
-load_if_exists "$HOME/.my_aliases"
+load_if_exists "$HOME/.my_alias"
