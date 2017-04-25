@@ -206,3 +206,5 @@ load_if_exists() {
 }
 
 load_if_exists "$HOME/.my_alias"
+export PATH="$HOME/.ndenv/bin:$PATH"
+eval "$(ndenv init -)"
