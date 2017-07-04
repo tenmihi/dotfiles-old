@@ -2,6 +2,10 @@
 " generics
 "
 
+" yank to clipboard
+set clipboard&
+set clipboard^=unnamedplus
+
 " esc timeout 
 set timeout timeoutlen=50
 

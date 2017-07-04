@@ -17,6 +17,9 @@ alias gaa='git add -A'
 # git commit
 alias gc='git commit'
 
+# git branch
+alias gb='git branch'
+
 # safe rm
 if builtin command -v rmtrash > /dev/null ; then
   alias rm='rmtrash'
