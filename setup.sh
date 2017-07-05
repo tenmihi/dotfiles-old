@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-dot_files=(".vimrc" ".tmux.conf" ".zshrc" ".my_alias")
+dot_files=(".vimrc" ".tmux.conf" ".zshrc")
 
 for file in $dot_files;
 do

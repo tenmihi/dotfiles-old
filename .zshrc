@@ -1,4 +1,17 @@
 #
+# Functions
+#
+
+# 存在したら読み込む
+load_if_exists() {
+  if [ -f $1 ]; then
+    source $1
+  fi
+}
+
+
+
+#
 # basic
 #
 
@@ -133,13 +146,7 @@ eval "$(plenv init -)"
 # load aliases
 #
 
-load_if_exists() {
-  if [ -f $1 ]; then
-    source $1
-  fi
-}
-
-load_if_exists "$HOME/.my_alias"
+load_if_exists "./.my_alias"
 
 #
 # node env path
