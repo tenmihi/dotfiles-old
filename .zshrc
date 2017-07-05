@@ -6,10 +6,10 @@
 load_if_exists() {
   if [ -f $1 ]; then
     source $1
+  else
+    echo 'not found '.$1
   fi
 }
-
-
 
 #
 # basic
@@ -87,14 +87,19 @@ setopt transient_rprompt
 # add hook
 autoload -Uz add-zsh-hook
 
-# コマンドのオプションや引数を補完する
-autoload -Uz compinit && compinit -u
-
 # escape URL
 autoload -Uz url-quote-magic
 
 # show vcs information
 autoload -Uz vcs_info
+
+#
+# 補完
+#
+
+: DOTPATH=$1;
+
+load_if_exists $1.'/misc/completion'
 
 #
 # env
