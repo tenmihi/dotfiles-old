@@ -1,3 +1,7 @@
+
+# shottcut to this dotfiles
+ZSH=$HOME/dotfiles
+
 #
 # Functions
 #
@@ -14,15 +18,6 @@ load_if_exists() {
 #
 # basic
 #
-
-# 補完候補を一覧で表示する
-setopt auto_list
-
-# 補完キー連打で候補順に自動で補完する
-setopt auto_menu
-
-# cd 時に自動でディレクトリスタックに追加する
-setopt auto_pushd
 
 # コマンド履歴に実行時間も記録する
 setopt extended_history
@@ -42,31 +37,13 @@ setopt hist_save_no_dups
 # ^D でシェルを終了しない
 setopt ignore_eof
 
-# 履歴をすぐに追加する（通常はシェル終了時）
-setopt inc_append_history
-
-# # 以降をコメントとして扱う
-setopt interactive_comments
-
 # disable beep
 setopt no_beep
 setopt no_hist_beep
 setopt no_list_beep
 
-# = 以降も補完する（例：--option=value）
-setopt magic_equal_subst
-
 # バックグラウンド処理の状態変化をすぐに通知する
 setopt notify
-
-# enable 8 bit characters
-setopt print_eight_bit
-
-# 終了ステータスが0以外の場合にステータスを表示する
-setopt print_exit_value
-
-# show vcs information
-setopt prompt_subst
 
 # ディレクトリスタックと重複したディレクトリをスタックに追加しない
 setopt pushd_ignore_dups
@@ -97,9 +74,7 @@ autoload -Uz vcs_info
 # 補完
 #
 
-: DOTPATH=$1;
-
-load_if_exists $1.'/misc/completion'
+source $ZSH/zsh/completion.zsh
 
 #
 # env

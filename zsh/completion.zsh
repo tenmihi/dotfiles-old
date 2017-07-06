@@ -18,11 +18,9 @@ setopt interactive_comments  # コマンドラインでも # 以降をコメン�
 setopt magic_equal_subst     # コマンドラインの引数で --prefix=/usr などの = 以降でも補完できる
 
 setopt complete_in_word      # 語の途中でもカーソル位置で補完
-setopt always_last_prompt    # カーソル位置は保持したままファイル名一覧を順次その場で表示
 
-setopt print_eight_bit　　#日本語ファイル名等8ビットを通す
-setopt extended_glob　　# 拡張グロブで補完(~とか^とか。例えばless *.txt~memo.txt ならmemo.txt 以外の *.txt にマッチ)
-setopt globdots　　　　　# 明確なドットの指定なしで.から始まるファイルをマッチ
+setopt extended_glob         # 拡張グロブ
+setopt globdots              # 明確なドットの指定なしで.から始まるファイルをマッチ
 
 bindkey "^I" menu-complete   # 展開する前に補完候補を出させる(Ctrl-iで補完するようにする)
 
