@@ -126,7 +126,7 @@ eval "$(plenv init -)"
 # load aliases
 #
 
-load_if_exists "./.my_alias"
+source $ZSH'/.my_alias'
 
 #
 # node env path

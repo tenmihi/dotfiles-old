@@ -27,3 +27,6 @@ fi
 
 # carton exec
 alias carton-exec='carton exec -- plackup -Ilib -R ./lib --access-log /dev/null -p5000 -a'
+
+# Denco
+alias denco-plack-log='tail -F $MF_DEV_HOME/var/log/plack/denco.error.log'
