@@ -1,10 +1,6 @@
 
-# shottcut to this dotfiles
+# shortcut to this dotfiles
 ZSH=$HOME/dotfiles
-
-#
-# Functions
-#
 
 # 存在したら読み込む
 load_if_exists() {
