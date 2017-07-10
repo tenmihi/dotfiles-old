@@ -19,6 +19,9 @@ source $ZSH/zsh/completion.zsh
 # alias
 source $ZSH/.my_alias
 
+# env 
+source $ZSH/.env
+
 # コマンド履歴に実行時間も記録する
 setopt extended_history
 
@@ -88,30 +91,9 @@ bindkey '^[[Z' reverse-menu-complete
 # others
 #
 
-# plenv
-if [ -f 'plenv' ]; then
-  export PLENV_ROOT=$HOME/.plenv
-  export PATH=$PLENV_ROOT/bin:$PATH
-  eval "$(plenv init -)"
-fi
-source $ZSH'/.my_alias'
-
-
-# ndenv
-if [ -f 'ndenv']; then
-  export PATH="$HOME/.ndenv/bin:$PATH"
-  eval "$(ndenv init -)"
-fi
-
-# rbenv
-if [ -f 'rbenv']; then
-  eval "$(rbenv init -)"
-fi
-
 # brew link openssl
 export OPENSSL_INCLUDE="/usr/local/opt/openssl/include"
 export OPENSSL_LIB="/usr/local/opt/openssl/lib"
-
 
 # Android Sdk
 export ANDROID_HOME="/Users/murao/Library/Android/sdk"
