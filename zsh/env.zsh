@@ -8,13 +8,13 @@ if [ -f 'plenv' ]; then
 fi
 
 # ndenv
-if [ -f 'ndenv']; then
+if [ -f 'ndenv' ]; then
   export PATH="$HOME/.ndenv/bin:$PATH"
   eval "$(ndenv init -)"
 fi
 
 # rbenv
-if [ -f 'rbenv']; then
+if [ -f 'rbenv' ]; then
   eval "$(rbenv init -)"
 fi
 

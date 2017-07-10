@@ -17,10 +17,10 @@ source $ZSH/zsh/mf_config.zsh
 source $ZSH/zsh/completion.zsh
 
 # alias
-source $ZSH/.my_alias
+source $ZSH/zsh/alias.zsh
 
 # env 
-source $ZSH/.env
+source $ZSH/zsh/env.zsh
 
 # コマンド履歴に実行時間も記録する
 setopt extended_history
