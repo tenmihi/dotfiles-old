@@ -1,23 +1,18 @@
-
 # shottcut to this dotfiles
 ZSH=$HOME/dotfiles
-
-#
-# Functions
-#
 
 # 存在したら読み込む
 load_if_exists() {
   if [ -f $1 ]; then
     source $1
-  else
-    echo 'not found '.$1
   fi
 }
 
-#
-# basic
-#
+# mf config
+source $ZSH/zsh/mf_config.zsh
+
+# completion
+source $ZSH/zsh/completion.zsh
 
 # コマンド履歴に実行時間も記録する
 setopt extended_history
@@ -57,22 +52,6 @@ setopt share_history
 # コマンド実行後は右プロンプトを消す
 setopt transient_rprompt
 
-#
-# basics(autoload)
-#
-
-# add hook
-autoload -Uz add-zsh-hook
-
-# escape URL
-autoload -Uz url-quote-magic
-
-# show vcs information
-autoload -Uz vcs_info
-
-#
-# 補完
-#
 
 source $ZSH/zsh/completion.zsh
 
@@ -113,9 +92,12 @@ bindkey '^[[Z' reverse-menu-complete
 #
 
 # plenv
-export PLENV_ROOT=$HOME/.plenv
-export PATH=$PLENV_ROOT/bin:$PATH
-eval "$(plenv init -)"
+
+if [ -f 'plenv' ]; then
+  export PLENV_ROOT=$HOME/.plenv
+  export PATH=$PLENV_ROOT/bin:$PATH
+  eval "$(plenv init -)"
+fi
 
 #
 # load aliases
@@ -142,6 +124,8 @@ export OPENSSL_LIB="/usr/local/opt/openssl/lib"
 #
 
 eval "$(rbenv init -)"
+
+# Android Sdk
 export ANDROID_HOME="/Users/murao/Library/Android/sdk"
 export ANDROID_SDK_TOOLS="/Users/murao/Library/Android/sdk/tools"
 export PATH=$PATH:$ANDROID_HOME:$ANDROID_SDK_TOOLS
