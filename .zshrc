@@ -1,3 +1,4 @@
+#! /bin/zsh
 
 # shortcut to this dotfiles
 ZSH=$HOME/dotfiles
@@ -6,14 +7,20 @@ ZSH=$HOME/dotfiles
 load_if_exists() {
   if [ -f $1 ]; then
     source $1
-  else
-    echo 'not found '.$1
   fi
 }
 
-#
-# basic
-#
+# mf config
+source $ZSH/zsh/mf_config.zsh
+
+# completion
+source $ZSH/zsh/completion.zsh
+
+# alias
+source $ZSH/zsh/alias.zsh
+
+# env 
+source $ZSH/zsh/env.zsh
 
 # コマンド履歴に実行時間も記録する
 setopt extended_history
@@ -53,24 +60,6 @@ setopt share_history
 # コマンド実行後は右プロンプトを消す
 setopt transient_rprompt
 
-#
-# basics(autoload)
-#
-
-# add hook
-autoload -Uz add-zsh-hook
-
-# escape URL
-autoload -Uz url-quote-magic
-
-# show vcs information
-autoload -Uz vcs_info
-
-#
-# 補完
-#
-
-source $ZSH/zsh/completion.zsh
 
 #
 # env
@@ -81,12 +70,6 @@ export EDITOR=vim
 
 # コマンド履歴を保存するファイルを指定する
 export HISTFILE=~/.zhistory
-
-# メモリに保存する履歴の件数を指定する
-export HISTSIZE=1000
-
-# ファイルに保存する履歴の件数を指定する
-export SAVEHIST=1000000
 
 # set character set
 export LANG=ja_JP.UTF-8
@@ -108,44 +91,16 @@ bindkey '^[[Z' reverse-menu-complete
 # others
 #
 
-# plenv
-export PLENV_ROOT=$HOME/.plenv
-export PATH=$PLENV_ROOT/bin:$PATH
-eval "$(plenv init -)"
-
-#
-# load aliases
-#
-
-source $ZSH'/.my_alias'
-
-#
-# node env path
-#
-
-export PATH="$HOME/.ndenv/bin:$PATH"
-eval "$(ndenv init -)"
-
-#
 # brew link openssl
-#
-
 export OPENSSL_INCLUDE="/usr/local/opt/openssl/include"
 export OPENSSL_LIB="/usr/local/opt/openssl/lib"
 
-#
-# rbenv
-#
-
-eval "$(rbenv init -)"
+# Android Sdk
 export ANDROID_HOME="/Users/murao/Library/Android/sdk"
 export ANDROID_SDK_TOOLS="/Users/murao/Library/Android/sdk/tools"
 export PATH=$PATH:$ANDROID_HOME:$ANDROID_SDK_TOOLS
 
-#
 # ssh-agent
-#
-
 if [ -f ~/.ssh-agent ]; then
     . ~/.ssh-agent
 fi
@@ -155,8 +110,5 @@ if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
 fi
 ssh-add -l >& /dev/null || ssh-add
 
-#
 # CMake
-#
-
 export PATH="/Applications/CMake.app/Contents/bin":$PATH
