@@ -1,14 +1,19 @@
+# completion
 autoload -U compinit promptinit
 compinit
 promptinit
 
+# safe rm
 if [ -d ${HOME}/.Trash ]
 then
     alias rm='mv --backup=numbered --target-directory=${HOME}/.Trash'
 fi
 
-export DBD_MYSQL_TESTUSER=root
+# anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
+if [ -f 'anyenv' ]; then
+  eval "$(anyenv init -)"
+fi
 
+# fix git log multi byte character issue
 export LESSCHARSET=utf-8
