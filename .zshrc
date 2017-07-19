@@ -23,7 +23,7 @@ source $ZSH/zsh/alias.zsh
 source $ZSH/zsh/env.zsh
 
 # private 
-source $ZSH/zsh/private.zsh
+load_if_exists $ZSH/zsh/private.zsh
 
 # コマンド履歴に実行時間も記録する
 setopt extended_history
