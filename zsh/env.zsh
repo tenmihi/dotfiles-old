@@ -1,8 +1,7 @@
 #! /bin/zsh
 
 # plenv
-export PLENV_ROOT=$HOME/.plenv
-export PATH=$PLENV_ROOT/bin:$PATH
+export PATH="$HOME/.plenv/bin:$PATH"
 if builtin command -v plenv > /dev/null; then
   eval "$(plenv init -)"
   echo "[info] plenv loaded."
@@ -16,6 +15,7 @@ if builtin command -v ndenv > /dev/null; then
 fi
 
 # rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
 if builtin command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
   echo "[info] rbenv loaded."
