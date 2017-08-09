@@ -24,6 +24,8 @@ setopt globdots              # 明確なドットの指定なしで.から始ま
 
 bindkey "^I" menu-complete   # 展開する前に補完候補を出させる(Ctrl-iで補完するようにする)
 
+# 補完時に候補をハイライトする
+zstyle ':completion:*:default' menu select=2
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
 zstyle ':completion:*:messages' format $YELLOW'%d'$DEFAULT
