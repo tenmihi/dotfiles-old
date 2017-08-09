@@ -63,10 +63,7 @@ setopt share_history
 # コマンド実行後は右プロンプトを消す
 setopt transient_rprompt
 
-
-#
 # env
-#
 
 # set default editor to vim
 export EDITOR=vim
@@ -77,9 +74,7 @@ export HISTFILE=~/.zhistory
 # set character set
 export LANG=ja_JP.UTF-8
 
-#
 # keybinds
-#
 
 # コマンドラインの編集モードをViにする
 bindkey -v
@@ -112,6 +107,3 @@ if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
     . ~/.ssh-agent
 fi
 ssh-add -l >& /dev/null || ssh-add
-
-# CMake
-export PATH="/Applications/CMake.app/Contents/bin":$PATH
