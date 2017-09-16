@@ -10,9 +10,6 @@ load_if_exists() {
   fi
 }
 
-# mf config
-source $ZSH/zsh/mf_config.zsh
-
 # completion
 source $ZSH/zsh/completion.zsh
 
