@@ -19,6 +19,11 @@ source $ZSH/zsh/alias.zsh
 # env 
 source $ZSH/zsh/env.zsh
 
+if [[ ${OSTYPE} =~ "darwin" ]]; then
+  source $ZSH/zsh/osx.zsh
+  echo "[info] osx.zsh loaded"
+fi
+
 # private 
 load_if_exists $ZSH/zsh/private.zsh
 
@@ -81,22 +86,6 @@ bindkey -v '^?' backward-delete-char
 
 # Shift-Tabで候補を逆順に補完する
 bindkey '^[[Z' reverse-menu-complete
-
-#
-# others
-#
-
-# brew link openssl
-export OPENSSL_INCLUDE="/usr/local/opt/openssl/include"
-export OPENSSL_LIB="/usr/local/opt/openssl/lib"
-
-# Android Sdk
-export ANDROID_HOME="/Users/murao/Library/Android/sdk"
-export ANDROID_SDK_TOOLS="/Users/murao/Library/Android/sdk/tools"
-export PATH=$PATH:$ANDROID_HOME:$ANDROID_SDK_TOOLS
-
-# /usr/local/bin を優先(gitコマンド等)
-export PATH=/usr/local/git/bin:$PATH
 
 # ssh-agent
 if [ -f ~/.ssh-agent ]; then
