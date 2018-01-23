@@ -102,3 +102,6 @@ if dein#load_state('~/.vim/bundles/repos/github.com/Shougo/dein.vim')
 endif
 
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
+filetype plugin indent on
+syntax enable
