@@ -95,6 +95,7 @@ if dein#load_state('~/.vim/bundles/repos/github.com/Shougo/dein.vim')
   call dein#add('Shougo/dein.vim')
   call dein#add('Shougo/neocomplete.vim')
   call dein#add('posva/vim-vue')
+  call dein#add('kchmck/vim-coffee-script')
 
   call dein#end()
   call dein#save_state()
