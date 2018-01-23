@@ -19,6 +19,11 @@ source $ZSH/zsh/alias.zsh
 # env 
 source $ZSH/zsh/env.zsh
 
+if [[ ${OSTYPE} =~ "darwin" ]]; then
+  source $ZSH/zsh/osx.zsh
+  echo "[info] osx.zsh loaded"
+fi
+
 # private 
 load_if_exists $ZSH/zsh/private.zsh
 
