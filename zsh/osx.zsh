@@ -11,3 +11,6 @@ export PATH=$PATH:$ANDROID_HOME:$ANDROID_SDK_TOOLS
 
 # /usr/local/bin を優先(gitコマンド等)
 export PATH=/usr/local/git/bin:$PATH
+
+# node
+export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
