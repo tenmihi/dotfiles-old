@@ -88,26 +88,35 @@ set fencs=utf-8
 set fileformats=unix,dos,mac
 
 "---------------------------------------------------------------------------
-" dein.vim:
-"
 if &compatible
   set nocompatible
 endif
-set runtimepath+=~/.vim/bundles/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.vim/bundles/repos/github.com/Shougo/dein.vim')
-  call dein#begin('~/.vim/bundles/repos/github.com/Shougo/dein.vim')
+let s:dein_dir = expand('~/.cache/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
-  call dein#add('Shougo/dein.vim')
-  call dein#add('posva/vim-vue')
-  call dein#add('kchmck/vim-coffee-script')
-  call dein#add('scrooloose/nerdtree')
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+endif
+
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+
+  call dein#load_toml('~/dotfiles/dein/plugins.toml', {'lazy': 0})
+
+  "call dein#load_toml('/dotfiles/dein/plugins_lazy.toml', {'lazy': 1})
 
   call dein#end()
   call dein#save_state()
 endif
 
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-
 filetype plugin indent on
 syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif

@@ -1,0 +1,11 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+  map <C-e> :NERDTreeToggle<CR>
+'''
+
+[[plugins]]
+repo = 'w0rp/ale'
