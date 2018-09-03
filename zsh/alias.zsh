@@ -1,16 +1,19 @@
+# git status
+alias status='git status'
+
 # git add
-alias gaa='git add -A'
+alias add='git add'
 
 # git commit
-alias gc='git commit'
+alias commit='git commit'
 
 # git branch
-alias gb='git branch'
+alias branch='git branch'
+
+# git push
+alias push='git push'
 
 # safe rm
 if builtin command -v rmtrash > /dev/null ; then
   alias rm='rmtrash'
 fi
-
-# carton exec
-alias carton-exec='carton exec -- plackup -Ilib -R ./lib --access-log /dev/null -p5000 -a'
