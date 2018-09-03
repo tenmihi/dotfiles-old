@@ -12,3 +12,6 @@ repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'posva/vim-vue'
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
