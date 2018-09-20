@@ -15,3 +15,7 @@ export PATH=/usr/local/git/bin:$PATH
 
 # node
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+
+# git completion
+source /usr/local/etc/bash_completion.d/git-prompt.sh
+source /usr/local/etc/bash_completion.d/git-completion.bash
