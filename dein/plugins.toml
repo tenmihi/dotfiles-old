@@ -8,9 +8,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'w0rp/ale'
-
-[[plugins]]
 repo = 'posva/vim-vue'
 
 [[plugins]]
@@ -90,3 +87,10 @@ hook_add = '''
   " https://github.com/c9s/perlomni.vim
   let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 '''
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'w0rp/ale'
+
