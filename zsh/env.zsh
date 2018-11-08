@@ -21,3 +21,6 @@ if builtin command -v rbenv > /dev/null; then
   echo "[info] rbenv loaded."
 fi
 
+# npm global path
+export PATH=$PATH:`npm bin -g`
+
