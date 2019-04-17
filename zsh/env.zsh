@@ -1,6 +1,13 @@
 #! /bin/zsh
 
 # plenv
+export PATH="$HOME/.anyenv/bin:$PATH"
+if builtin command -v anyenv > /dev/null; then
+  eval "$(anyenv init -)"
+  echo "[info] anyenv loaded."
+fi
+
+# plenv
 export PATH="$HOME/.plenv/bin:$PATH"
 if builtin command -v plenv > /dev/null; then
   eval "$(plenv init -)"

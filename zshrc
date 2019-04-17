@@ -87,9 +87,8 @@ bindkey -v '^?' backward-delete-char
 # Shift-Tabで候補を逆順に補完する
 bindkey '^[[Z' reverse-menu-complete
 
-#
-# others
-#
+# iterm profile change
+alias ssh='~/dotfiles/iterm-change-profile.sh'
 
 # ssh-agent
 if [ -f ~/.ssh-agent ]; then
