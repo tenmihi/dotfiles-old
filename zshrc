@@ -108,3 +108,7 @@ ssh-add -l >& /dev/null || ssh-add
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/murao/.sdkman"
+[[ -s "/Users/murao/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/murao/.sdkman/bin/sdkman-init.sh"
