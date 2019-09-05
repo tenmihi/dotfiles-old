@@ -88,7 +88,9 @@ bindkey -v '^?' backward-delete-char
 bindkey '^[[Z' reverse-menu-complete
 
 # iterm profile change
-alias ssh='~/dotfiles/iterm-change-profile.sh'
+# if [[ ${OSTYPE} =~ "darwin" ]]; then
+#  alias ssh='~/dotfiles/iterm-change-profile.sh'
+#fi
 
 # ssh-agent
 if [ -f ~/.ssh-agent ]; then

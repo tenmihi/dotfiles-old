@@ -1,8 +1,12 @@
 #!/bin/zsh
 
+echo 'load completion config'
+
 #
 # 補完に関する設定
 #
+
+autoload -U compinit && compinit # enable completion
 
 #
 # 参考
