@@ -1,9 +1,5 @@
 #! /bin/zsh
 
-# shortcut to this dotfiles
-ZSH=$HOME/dotfiles
-
-# 存在したら読み込む
 load_if_exists() {
   if [ -f $1 ]; then
     source $1
@@ -11,21 +7,20 @@ load_if_exists() {
 }
 
 # completion
-source $ZSH/zsh/completion.zsh
+source ~/.zsh/completion.zsh
 
 # alias
-source $ZSH/zsh/alias.zsh
+source ~/.zsh/alias.zsh
 
 # env 
-source $ZSH/zsh/env.zsh
+source ~/.zsh/env.zsh
 
 if [[ ${OSTYPE} =~ "darwin" ]]; then
-  source $ZSH/zsh/osx.zsh
-  echo "[info] osx.zsh loaded"
+  source ~/.zsh/osx.zsh
 fi
 
 # private 
-load_if_exists $ZSH/zsh/private.zsh
+load_if_exists ./zsh/private.zsh
 
 # コマンド履歴に実行時間も記録する
 setopt extended_history
@@ -65,27 +60,13 @@ setopt share_history
 # コマンド実行後は右プロンプトを消す
 setopt transient_rprompt
 
-# env
-
-# set default editor to vim
 export EDITOR=vim
 
-# コマンド履歴を保存するファイルを指定する
 export HISTFILE=~/.zhistory
-
-# set character set
 export LANG=ja_JP.UTF-8
 
-# keybinds
-
-# コマンドラインの編集モードをViにする
-bindkey -v
-
-# バックスペースキーで文字を削除する
-bindkey -v '^?' backward-delete-char
-
-# Shift-Tabで候補を逆順に補完する
-bindkey '^[[Z' reverse-menu-complete
+bindkey -v # コマンドラインの編集モードをViにする
+bindkey -v '^?' backward-delete-char # バックスペースキーで文字を削除する
 
 # iterm profile change
 # if [[ ${OSTYPE} =~ "darwin" ]]; then
@@ -102,9 +83,3 @@ if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
 fi
 ssh-add -l >& /dev/null || ssh-add
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
