@@ -1,9 +1,6 @@
 #!/bin/zsh
 
-dot_files=("vimrc" "tmux.conf" "zshrc")
-
 # create symbolic link
-for file in $dot_files;
-do
-    ln -s $HOME/dotfiles/$file $HOME/.$file
-done
+ln -s $HOME/dotfiles/vimrc $HOME/.vimrc
+ln -s $HOME/dotfiles/tmux.conf $HOME/.tmux.conf
+ln -s $HOME/dotfiles/zsh/zshrc $HOME/.zshrc
