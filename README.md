@@ -1,4 +1,4 @@
-# README
+# dotfiles
 
 tenmihi's dotfiles
 
