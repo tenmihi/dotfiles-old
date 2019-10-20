@@ -1,33 +1,22 @@
 #! /bin/zsh
 
-# plenv
+# init anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 if builtin command -v anyenv > /dev/null; then
   eval "$(anyenv init -)"
   echo "[info] anyenv loaded."
 fi
 
-# plenv
+# init plenv
 export PATH="$HOME/.plenv/bin:$PATH"
 if builtin command -v plenv > /dev/null; then
   eval "$(plenv init -)"
   echo "[info] plenv loaded."
 fi
 
-# ndenv
-export PATH="$HOME/.ndenv/bin:$PATH"
+# init nodenv
+export PATH="$HOME/.nodenv/bin:$PATH"
 if builtin command -v ndenv > /dev/null; then
-  eval "$(ndenv init -)"
-  echo "[info] ndenv loaded."
+  eval "$(nodenv init -)"
+  echo "[info] nodenv loaded."
 fi
-
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-if builtin command -v rbenv > /dev/null; then
-  eval "$(rbenv init -)"
-  echo "[info] rbenv loaded."
-fi
-
-# npm global path
-export PATH=$PATH:`npm bin -g`
-

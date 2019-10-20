@@ -87,6 +87,8 @@ set fencs=utf-8
 set fileformats=unix,dos,mac
 
 "---------------------------------------------------------------------------
+" Setup dein:
+"
 if &compatible
   set nocompatible
 endif
@@ -104,9 +106,9 @@ endif
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
-  call dein#load_toml('~/dotfiles/dein/plugins.toml', {'lazy': 0})
+  call dein#load_toml('~/.dein/plugins.toml', {'lazy': 0})
 
-  "call dein#load_toml('/dotfiles/dein/plugins_lazy.toml', {'lazy': 1})
+  "call dein#load_toml('~/.dein/plugins_lazy.toml', {'lazy': 1})
 
   call dein#end()
   call dein#save_state()

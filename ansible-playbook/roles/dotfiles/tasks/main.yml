@@ -1,7 +1,16 @@
 - name: Link dotfiles
   file:
-    src: "{{item}}"
-    dest: "~/{{item | basename}}"
+    src: "{{ item }}"
+    dest: "~/{{ item | basename }}"
     state: link
   with_fileglob:
     - ".*"
+
+- name: Link dotdirs
+  file:
+    src: "{{ role_path }}/files/{{ item }}"
+    dest: "~/{{item}}"
+    state: link
+  with_items:
+    - ".zsh"
+    - ".dein"
